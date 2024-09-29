@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+#replace the word from file
+
+{
+sed '1,4!s/give learning/welcome/g' testfile
+} > temp
+
+# Replace the original file with the modified one
+mv temp testfile
+
+#print Message
+echo "Replace Task Success"

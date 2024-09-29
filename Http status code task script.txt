@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+# Get HTTP status code using curl
+HTTP_CODE=$(curl -s -o /dev/null -I -w "%{http_code}" "https://www.guvi.in")
+
+# Print HTTP code and success/failure message
+echo "HTTP Status Code: $HTTP_CODE"
+
+if [ "$HTTP_CODE" -eq 200 ]; then
+    echo "Status: Success."
+else
+    echo "Status: Failure"
+fi
